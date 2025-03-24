@@ -33,3 +33,52 @@ MVC pattern, and all of those things.
 • PHP for intermediate projects
 • PHP for larger projects
 -------------------code----------------------
+
+*** 4-Install XMAPP (mac OS) ***
+
+1.Downloading XAMPP
+- Search for XAMPP on Google and go to the Apache Friends website.
+- XAMPP is a bundle that includes:
+  - Apache (Web Server)
+  - MariaDB (Database, alternative to MySQL)
+  - PHP (Server-side scripting language)
+  - Perl (Optional, not required but included)
+- Click the download button for Mac (OS X) and confirm the download.
+-------------------code----------------------
+https://www.apachefriends.org/
+-------------------code----------------------
+
+2.Installing XAMPP
+- Once downloaded, open the installer.
+- If you see a security warning saying "Developer cannot be verified," do the following:
+  - Press Shift + Right Click on the installer and select Open.
+  - Click Open to proceed.
+- Enter your Mac password when prompted to allow installation.
+- Follow the installation steps:
+  - Default installation path: `/Applications/XAMPP`
+  - Click Next, Next and wait for the installation to complete.
+- Click Finish, and XAMPP should launch automatically.
+
+3.Running XAMPP
+- After installation, XAMPP will open.
+- You can check if it is working by opening a browser and visiting:
+  - `http://localhost/dashboard`
+- If the page loads successfully, XAMPP is running properly.
+
+4.Starting and Managing Services
+- Open the XAMPP Manager to control servers.
+- Ensure the following are running:
+  - Apache (Web server)
+  - MariaDB (Database server)
+- If MariaDB is not running:
+  - Select MariaDB and click Start.
+  - Wait for the service to start.
+  - Refresh `phpMyAdmin` (`http://localhost/phpmyadmin`) to confirm it is working.
+
+5.Troubleshooting
+- If Apache or MariaDB fails to start, refer to the troubleshooting section in the course.
+- Ensure no other applications are using the same ports.
+- Restart XAMPP if needed.
+
+With these steps, XAMPP should be successfully installed and running on your Mac.
+
