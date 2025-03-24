@@ -1,0 +1,35 @@
+*** 1-Introduction ***
+
+-------------------code----------------------
+• PHP was launched in 1995.
+• nowadays it's powering about 80% of all websites.
+• Popular software is also written in it, for example like WordPress for blogging.
+• PHP in general is an incredibly powerful language.
+• Also, another advantage is that PHP web hosting is incredibly cheap.
+-------------------code----------------------
+
+- we might even find free Hosts or even Hosts for just a few dollars, so it's one of the most affordable
+hosting options for websites Moreover.
+
+- PHP has evolved significantly over the last few years, and it used to be a pure scripting
+language for simple scripts, and for some people, it might still have a somewhat bad reputation due
+to that, but it's no longer true. It has become an advanced, object oriented programming language that we can utilize for modern applications,
+
+- So what's the structure of this course?
+Well, first we will just set up our system.
+Then we will examine how we can use PHP for small projects.
+So there we will have a look at variables conditionals like if and else loops and arrays and how all
+of that works.
+Then we will go to to PHP for intermediate projects.
+So there we will examine how we can work with a database, how functions work, how we can add type
+annotations to those functions to make them more, , easy to use, how to handle file uploads and
+all of those things is what we will examine then.
+And then we will have a look at how we can use PHP for larger projects.
+So there we will investigate things like object oriented programming, namespaces, auto-loading, the
+MVC pattern, and all of those things.
+-------------------code----------------------
+• set up our system.
+• PHP for small projects
+• PHP for intermediate projects
+• PHP for larger projects
+-------------------code----------------------
