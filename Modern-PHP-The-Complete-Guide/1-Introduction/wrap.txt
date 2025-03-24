@@ -81,4 +81,48 @@ https://www.apachefriends.org/
 - Restart XAMPP if needed.
 
 With these steps, XAMPP should be successfully installed and running on your Mac.
+PS: if the sql database doesn't worked properly 
+method1:
+- show the proses of sql 
+-------------------code----------------------
+ps aux | grep mysql
+-------------------code----------------------
 
+kill the proses
+-------------------code----------------------
+kill -9 {process id}
+-------------------code----------------------
+
+method2:
+-------------------code----------------------
+sudo killall mysqld
+sudo /Applications/XAMPP/xamppfiles/bin/mysql.server start
+-------------------code----------------------
+
+In the kill command, option 9 (i.e., kill -9) is used to send the SIGKILL signal to a process.
+This forcefully terminates the process without allowing it to clean up resources or save its state.
+
+*** 5. Important fix: XAMPP (macOS) ***
+
+-------------------code----------------------
+display_errors=On
+error_reporting=E_ALL
+-------------------code----------------------
+
+By default, PHP is configured for production, meaning errors are not displayed. To enable error reporting:
+Navigate to:
+-------------------code----------------------
+/Applications/XAMPP/etc/php.ini
+-------------------code----------------------
+
+Open php.ini in a text editor (e.g., TextEdit or VS Code).
+
+Locate the following directives and update them:
+-------------------code----------------------
+display_errors = On
+error_reporting = E_ALL
+-------------------code----------------------
+
+Save the file and close the editor.
+
+Restart the XAMPP web server for changes to take effect.
