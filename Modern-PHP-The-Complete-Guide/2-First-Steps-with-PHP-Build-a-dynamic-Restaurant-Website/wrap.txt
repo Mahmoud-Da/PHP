@@ -25,3 +25,94 @@ Ingredients Page – Showcases the ingredients used in the dishes.
 
 Instead of creating separate static HTML pages, we will use PHP to structure our website efficiently. PHP will dynamically load the appropriate background image and content for each page while keeping the layout consistent.
 This approach will not only make development more manageable but also help us understand the power of PHP in web development.
+
+
+*** 10. A first PHP file and the `echo` command: Display text on a website ***
+- Creating Our First PHP File
+Let's now create our first PHP file. To do this, we can open our code editor.
+It is important to note that this file must be placed in the document root of our web server.
+In the previous chapter, we set up the web server properly, so we will assume that we already have a folder open within our web server directory.
+
+- Now, let's create a new file and name it 01-first-steps.php. By simply doing this, we have technically created our first PHP file.
+-------------------code----------------------
+01-first-steps.php
+-------------------code----------------------
+
+- Adding Content to the File
+Now, let's fill this file with some content.
+Luckily, in our editor, we can use the exclamation mark (!) shortcut to generate a complete HTML structure.
+Then, within the <body> tag, we can add an <h1> element:
+
+-------------------code----------------------
+<h1>Hey, this is our first PHP file!</h1>
+This is standard HTML. But how can we access this file?
+-------------------code----------------------
+
+- Accessing the PHP File
+To view our PHP file in a browser, we need to ensure it is stored within our web server's directory. 
+In our case, all files for this course are stored in a subfolder named php, but this name is arbitrary.
+The directory structure might look like this:
+-------------------code----------------------
+/php/chapter1/01-first-steps.php
+-------------------code----------------------
+The URL to access this file depends on where we stored it, but we must access it via a browser using our web server's address.
+Once we do that, we will see our first PHP file displayed in the browser.
+Congratulations! We have successfully created and accessed our first PHP file.
+
+- Understanding PHP in an HTML File
+At first glance, this file appears to be just an HTML document. 
+However, because it has a .php extension, the web server knows that PHP is enabled.
+When the browser requests this file, the server processes any PHP code before sending the result back.
+
+- PHP integrates seamlessly with HTML, meaning that any standard HTML file can also be a PHP file.
+If there is no PHP code, the file will simply be displayed as normal HTML.
+However, since PHP is enabled, we have the ability to insert dynamic content.
+
+- Writing Our First PHP Code Block
+Now, let's write our first PHP code block within this file. We can start a PHP block using the following syntax:
+-------------------code----------------------
+<?php
+// This is a PHP code block
+?>
+-------------------code----------------------
+To test this, let's use the echo command to output a simple message:
+-------------------code----------------------
+<?php
+echo "Hello from PHP!";
+?>
+-------------------code----------------------
+When we refresh our page, we will see the message "Hello from PHP!" displayed in our browser.
+However, if we check the page source, we will notice that the PHP code itself is not visible.
+This is because the server executes the PHP code and only sends the final output (the text) to the browser.
+
+- The Importance of Syntax in PHP
+PHP has strict syntax rules. Even a small mistake, 
+such as a missing semicolon or an unclosed string, can cause the entire script to fail.
+ Fortunately, modern code editors provide helpful error messages to detect these issues.
+
+For example, if we forget to close a string properly:
+-------------------code----------------------
+<?php
+echo "Hello from PHP;
+?>
+-------------------code----------------------
+PHP will generate an error and stop execution. Ensuring correct syntax is crucial for writing error-free PHP code.
+
+- Using PHP for Dynamic Content
+One of the biggest advantages of PHP is its ability to generate dynamic content. Let's take a simple example:
+-------------------code----------------------
+<?php
+echo "Rolling the dice: " . rand(1, 6);
+?>
+-------------------code----------------------
+
+In this case, we use PHP’s rand() function to generate a random number between 1 and 6.
+Each time we refresh the page, a new random number appears.
+
+This demonstrates the power of PHP—it allows us to create websites that change based on user interactions or other conditions.
+Instead of always displaying static content, PHP enables us to make websites more interactive.
+
+- Conclusion
+PHP is a powerful tool that allows us to build dynamic websites. While at first, our PHP file may seem like a regular HTML page,
+we can gradually introduce PHP features to enhance functionality.
+In the next section, we will explore more ways PHP can simplify and improve our web development process.
