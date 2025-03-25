@@ -126,3 +126,43 @@ error_reporting = E_ALL
 Save the file and close the editor.
 
 Restart the XAMPP web server for changes to take effect.
+ 
+ 
+*** 6. Install Visual Studio Code (macOS) *** 
+
+- Create a New PHP Project
+Navigate to Applications > XM folder.
+Inside XM folder, find TTDocs.
+Create a new folder (e.g., PHP) to store PHP files.
+
+- Create and Write a PHP File
+Inside VS Code, open the file browser.
+Click on New File and name it first-php-file.php.
+Start writing PHP code:
+-------------------code----------------------
+<?php
+echo "Hello, world!";
+?>
+-------------------code----------------------
+
+- Run PHP File on a Web Server
+Open a browser and visit: http://localhost/PHP.
+Ensure the file is inside the Htdocs folder.
+PHP files must be executed through a web server, not directly from the file system.
+
+Install PHP IntelliSense Extension
+Search for this extension and install it.
+-------------------code----------------------
+PHP IntelliSense 
+PHP Intelephen
+-------------------code----------------------
+
+This extension provides tooltips and auto-completion for PHP development.
+
+Run PHP File on a Web Server
+Open a browser and visit:
+-------------------code----------------------
+http://localhost/PHP
+-------------------code----------------------
+Ensure the file is inside the Htdocs folder.
+PHP files must be executed through a web server, not directly from the file system.
