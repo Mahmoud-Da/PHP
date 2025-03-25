@@ -1,0 +1,27 @@
+*** 9. Overview ***
+In this chapter, we will cover the basics of PHP development. We will learn how to work with variables, strings, and how to include external files to make our code more efficient.
+By the end of this chapter, we will have built a simple restaurant website with three pages. This website will demonstrate how PHP can simplify web development by allowing us to reuse code and manage content dynamically.
+
+- What We Will Learn
+How to use PHP to define variables and work with strings.
+How to include external files to create a modular website structure.
+How to dynamically generate a website's header and background images using PHP.
+How to manage individual content for different pages while maintaining a consistent layout.
+-------------------code----------------------
+In this section:
+► we will learn the basics of PHP development:
+► Variables
+► Strings
+► How to include files
+► And we'll create a first, simple website for a restaurant!
+-------------------code----------------------
+
+- Project Overview
+The restaurant website will have three pages, 
+each with a unique background image and different content:
+Menu Page – Displays the restaurant’s offerings.
+Mission Statement – Explains the restaurant’s philosophy.
+Ingredients Page – Showcases the ingredients used in the dishes.
+
+Instead of creating separate static HTML pages, we will use PHP to structure our website efficiently. PHP will dynamically load the appropriate background image and content for each page while keeping the layout consistent.
+This approach will not only make development more manageable but also help us understand the power of PHP in web development.
