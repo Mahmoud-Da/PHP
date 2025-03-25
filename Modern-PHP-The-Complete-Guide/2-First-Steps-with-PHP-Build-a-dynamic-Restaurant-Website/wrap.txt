@@ -268,3 +268,118 @@ The include command allows us to split our PHP code into smaller files, making t
 It enables us to create a shared structure (like HTML headers/footers) across different pages of a website.
 While include works with files of different extensions, it's best to use .php files to ensure proper execution of PHP code.
 
+
+*** 13. Variables in PHP: Store and access data dynamically ***
+
+- Using Variables in PHP
+Introduction to Variables
+Variables are used to store values, making it easier to reuse data without repetition.
+Syntax: Variables in PHP start with a $ sign followed by the name of the variable.
+
+- Basic Example of Output
+Output Without Variables:
+You can simply use echo to print something like this:
+-------------------code----------------------
+echo "Hello PHP!";
+echo "Hello PHP!";
+echo "Hello PHP!";
+echo "Hello PHP!";
+echo "Hello PHP!";
+-------------------code----------------------
+
+- Using Variables
+To avoid repeating the same value multiple times, you can store the value in a variable.
+Example:
+-------------------code----------------------
+$greeting = "Hello PHP!";
+echo $greeting;
+-------------------code----------------------
+The variable $greeting now holds the value "Hello PHP!", and it can be used multiple times.
+
+- Changing Variable Values
+The advantage of using variables is that if you need to change the value, you only need to change it in one place.
+
+Example:
+-------------------code----------------------
+$greeting = "Hello PHP on Mars!";
+echo $greeting;
+-------------------code----------------------
+This will output "Hello PHP on Mars!" without needing to modify multiple echo statements.
+
+- Multiple Variables
+You can define multiple variables in a PHP file.
+
+Example:
+-------------------code----------------------
+$greeting = "Hello PHP on Mars!";
+$year = 2050;
+echo $greeting;
+echo $year;
+-------------------code----------------------
+Result: Outputs "Hello PHP on Mars!" and "2050".
+
+6. Using Variables in HTML
+Variables are particularly useful for generating dynamic HTML content.
+
+Example:
+Define a variable for the page title in PHP:
+-------------------code----------------------
+<?php
+  $title = 'PHP is amazing!!!';
+?>
+-------------------code----------------------
+Use this variable inside HTML:
+
+-------------------code----------------------
+<?php
+    $title = 'PHP is amazing!!!';
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title; ?></title>
+</head>
+<body>
+    <h1><?php echo $title; ?></h1>
+</body>
+</html>
+-------------------code----------------------
+Result: The page title and the H1 element will both display "PHP is Amazing".
+
+- Benefits of Using Variables
+Reusability: You only need to change the value of a variable in one place to update it throughout the document.
+Maintainability: Makes it easier to manage and update values, especially when the same value is needed in multiple places.
+Dynamic Content: You can change the content of your page dynamically based on variables, making your pages flexible.
+
+- Example of Modifying Variable Values
+Initial value:
+-------------------code----------------------
+$title = "PHP is Amazing!";
+-------------------code----------------------
+
+Change value by adding emphasis:
+-------------------code----------------------
+$title = "PHP is AMAZING!!!";
+-------------------code----------------------
+Result: The page title and header reflect the updated value dynamically.
+
+
+- if we don't have html in our file we don't have to close the php tag we can 
+just write the open php tag at the first of the file
+-------------------code----------------------
+<?php
+
+$greeting = 'Hello PHP on Mars!';
+$year = 2050;
+
+echo $greeting;
+echo $greeting;
+echo $greeting;
+echo $greeting;
+echo $year;
+-------------------code----------------------
+
+- Summary
+PHP variables are an essential tool for storing and reusing data efficiently.
+They are especially useful for dynamic HTML generation, making it easy to modify content across a website by changing values in one location.
