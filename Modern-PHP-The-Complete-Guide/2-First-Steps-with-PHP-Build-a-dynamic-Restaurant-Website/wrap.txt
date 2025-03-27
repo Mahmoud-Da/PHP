@@ -526,3 +526,54 @@ $headerImage = "images/menu-header.jpg";
 Include header.inc.php and footer.inc.php.
 Ensure content is properly displayed between includes.
 Update navigation to link to menu.php.
+
+
+*** 17. Project: Multi-Page Restaurant Website (Sample Solution; Adding another Page) ***
+
+- Step 1: Understanding the Problem
+The file menu.html is currently a static HTML file.
+Including PHP code within it (e.g., <?php echo "test"; ?>) will not execute because browsers treat it as plain HTML.
+The PHP code appears in the page's source code but does not run or display properly.
+
+- Step 2: Converting the File to PHP
+Rename menu.html to menu.php.
+This change allows the PHP interpreter to process the file.
+Once renamed, the file can now execute PHP code properly.
+
+- Step 3: Adding the Menu Page to the Navigation
+Open header.inc.php (located in the inc directory).
+This file defines the website’s navigation, including links to the mission and ingredients pages.
+Add a new link to menu.php in the navigation section.
+Example:
+-------------------code----------------------
+<li><a href="menu.php">Our Menu</a></li>
+-------------------code----------------------
+Save the changes and refresh the ingredients.php page to confirm the new navigation link appears.
+
+- Step 4: Structuring the Menu Page
+Compare menu.php with ingredients.php to maintain consistency.
+The ingredients.php page includes:
+A page title
+A header image
+A common header section (header.inc.php)
+
+Copy and modify this structure for menu.php:
+Update the page title to "Menu".
+Use the appropriate header image by copying the path.
+Remove any unnecessary elements from the previous HTML version.
+
+Save the file and refresh the browser to confirm the structure is correct.
+
+Step 5: Adding the Footer
+The menu.php page currently lacks a footer, unlike other pages.
+Copy the footer section from ingredients.php and paste it at the bottom of menu.php.
+Save the file and refresh the browser.
+
+The footer should now appear, ensuring consistency across all pages.
+
+- Step 6: Final Testing
+Navigate through the website to confirm:
+The menu.php page loads correctly.
+The navigation includes a link to the menu.php page.
+The page title and header image display correctly.
+The footer appears as expected.
