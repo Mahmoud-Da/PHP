@@ -415,3 +415,53 @@ Next Steps:
 - Break down the website structure into common elements (header, footer, navigation).
 - Use PHP include or require to import these components dynamically.
 - Enhance the site with additional PHP functionalities, such as dynamic content loading.
+
+*** 15. Project: Multi-Page Restaurant Website (Refactoring) ***
+ Project: Culinary Cove Restaurant Website
+
+-Objective
+Transform the restaurant website into a multi-page site using PHP for better maintainability and scalability.
+
+-Challenges with Plain HTML
+- Every change in the navigation must be manually updated on all pages.
+- As the website grows, maintaining multiple HTML files becomes inefficient.
+
+-Transition to PHP
+-Step 1: Convert HTML Files to PHP
+- Rename `.html` files to `.php` to enable PHP processing.
+- Update navigation links from `.html` to `.php` in all pages.
+
+-Step 2: Implementing PHP Includes
+- Create an `inc/` folder for reusable components.
+- Separate common sections (header and footer) into separate PHP files:
+  - `header.inc.php`: Contains the opening HTML structure and navigation.
+  - `footer.inc.php`: Contains the closing HTML structure.
+
+-Step 3: Updating Individual Pages
+- Replace duplicated code in each page with `include` statements:
+-------------------code----------------------
+<?php include 'inc/header.inc.php'; ?>
+-------------------code----------------------
+- Add page-specific content in between.
+-------------------code----------------------
+<?php include 'inc/footer.inc.php'; ?>
+-------------------code----------------------
+
+-Advantages of PHP Includes
+- Easier Navigation Management: Changes to navigation apply across all pages automatically.
+- Better Maintainability: Only one file needs modification for global changes.
+- Scalability: Adding new pages is simple without redundant code.
+
+-Enhancements and Issues
+-Issue: Shared Background Image & Page Title
+- The same background image appears on all pages.
+- The browser title remains unchanged across pages.
+
+-Solution: Using PHP Variables
+- Assign unique titles and background images per page dynamically.
+- Implement variables in `header.inc.php` to adapt content per page.
+
+-Next Steps
+- Implement PHP variables to customize titles and background images dynamically.
+- Continue improving code efficiency and adding new features as needed.
+
