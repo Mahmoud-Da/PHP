@@ -407,3 +407,110 @@ var_dump("30" !== 30); // Outputs: bool(true)
 - Conclusion
 Booleans are an essential part of PHP, enabling conditional logic. Understanding comparison operators and using strict comparisons when necessary can lead to more stable and predictable code.
 
+
+*** 27. The `if` statement: Direct Conditional Control Flows ***
+
+- Introduction
+The `if` construct is fundamental in programming as it allows us to decide whether a certain code block should be executed or not.
+
+- Basic Syntax
+The simplest form of an `if` statement in PHP is:
+
+-------------------code----------------------
+if (condition) {
+    // Code block to execute if the condition is true
+}
+-------------------code----------------------
+
+The `condition` inside the parentheses must evaluate to a boolean (`true` or `false`).
+
+- Example of a Simple `if` Statement
+-------------------code----------------------
+if (true) {
+    echo "Welcome to our website.";
+}
+-------------------code----------------------
+This code will always execute because the condition is always `true`.
+
+- Conditional Execution
+If we replace `true` with `false`, the code inside the `if` block will be skipped.
+
+-------------------code----------------------
+if (false) {
+    echo "This will not be displayed.";
+}
+-------------------code----------------------
+
+- Using Variables in Conditions
+Instead of using a constant boolean value, we can evaluate an expression or check a variable's value:
+
+-------------------code----------------------
+$server_status = "okay";
+
+if ($server_status == "okay") {
+    echo "Welcome to our website.";
+}
+-------------------code----------------------
+
+- Example with Multiple Conditions
+We can enhance the `if` condition to check different server statuses:
+
+-------------------code----------------------
+$server_status = "maintenance";
+
+if ($server_status == "okay") {
+    echo "Welcome to our website.";
+} elseif ($server_status == "maintenance") {
+    echo "We are currently undergoing maintenance. Please check back later.";
+}
+-------------------code----------------------
+
+- Including an External File
+We can store the server status in an external PHP file (`status.php`) and include it in our main script:
+
+- `status.php`
+-------------------code----------------------
+<?php
+$server_status = "maintenance";
+?>
+-------------------code----------------------
+
+- Main File
+-------------------code----------------------
+<?php
+include "status.php";
+
+if ($server_status == "okay") {
+    echo "Welcome to our website.";
+} elseif ($server_status == "maintenance") {
+    echo "We are currently undergoing maintenance. Please check back later.";
+}
+?>
+-------------------code----------------------
+
+**Important:** If the file is not included properly, PHP will throw a warning about an undefined variable.
+
+- Code Blocks and Curly Braces
+A code block inside an `if` statement is defined using curly braces `{}`. This allows for multiple lines of code:
+
+-------------------code----------------------
+if ($server_status == "okay") {
+    echo "Welcome to our website.";
+    echo "Enjoy browsing our content.";
+}
+-------------------code----------------------
+
+If there is only one command, curly braces can be omitted, but this is not recommended for readability:
+
+-------------------code----------------------
+if ($server_status == "okay") echo "Welcome to our website.";
+-------------------code----------------------
+
+- Best Practices
+- Always use curly braces `{}` for clarity.
+- Use meaningful variable names.
+- Avoid hardcoding boolean values like `true` or `false` directly in conditions.
+- Use external files for configuration variables when needed.
+
+By following these practices, we can write clean and maintainable conditional statements in PHP.
+
