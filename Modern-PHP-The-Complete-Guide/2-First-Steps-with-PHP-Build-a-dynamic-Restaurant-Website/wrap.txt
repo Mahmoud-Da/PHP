@@ -577,3 +577,100 @@ The menu.php page loads correctly.
 The navigation includes a link to the menu.php page.
 The page title and header image display correctly.
 The footer appears as expected.
+
+*** 18. How to deal with Error & Warning Messages in PHP? ***
+- Understanding PHP Errors and How to Handle Them
+1. Importance of Syntax in PHP
+PHP has strict syntax rules, and even small mistakes can cause errors.
+The interpreter processes the code in two steps:
+Parsing – PHP reads and structures the code.
+Execution – If parsing succeeds, PHP runs the code.
+
+2. Common Types of Errors in PHP
+A. Parse Errors (Syntax Errors)
+Occurs when PHP fails to understand the code during parsing.
+Example: Missing $ before a variable name:
+-------------------code----------------------
+pageTitle = "Restaurant Website"; // Incorrect (Missing $)
+echo pageTitle;
+-------------------code----------------------
+
+Error Message:
+-------------------code----------------------
+Parse error: syntax error, unexpected token "=" in /path/to/error.php on line 3
+-------------------code----------------------
+
+Key Points:
+Parse errors prevent the file from being executed entirely.
+Even valid code before the error won’t run.
+The error message might point to a later line, but the actual mistake is often before it.
+
+Example: Missing semicolon:
+
+-------------------code----------------------
+$pageTitle = "Restaurant Website" // Incorrect (Missing ;)
+echo $pageTitle;
+-------------------code----------------------
+
+Fix:
+-------------------code----------------------
+$pageTitle = "Restaurant Website"; //  Correct
+echo $pageTitle;
+-------------------code----------------------
+
+B. Warnings (Recoverable Errors)
+Occurs when something goes wrong, but PHP continues execution.
+Example: Accessing an undefined variable:
+-------------------code----------------------
+echo $pageTitle; // Undefined variable (case-sensitive issue)
+-------------------code----------------------
+
+Warning Message:
+-------------------code----------------------
+Warning: Undefined variable $pageTitle in /path/to/error.php on line 3
+-------------------code----------------------
+
+Other Examples:
+Including a non-existent file:
+-------------------code----------------------
+include "nonexistent.php";
+-------------------code----------------------
+-------------------code----------------------
+Warning: include(nonexistent.php): failed to open stream: No such file or directory
+-------------------code----------------------
+
+Trying to use an incorrect case (PHP is case-sensitive):
+-------------------code----------------------
+$pageTitle = "Restaurant Website";
+echo $PageTitle; // Incorrect (uppercase "P")
+-------------------code----------------------
+
+Key Points:
+PHP still executes the rest of the script.
+Ignoring warnings can cause unexpected behavior.
+
+C. Fatal Errors (Execution Errors)
+Occurs when PHP encounters a serious issue and stops execution.
+
+Example: Calling an undefined function:
+-------------------code----------------------
+someUndefinedFunction(); // Function does not exist
+-------------------code----------------------
+Error Message:
+-------------------code----------------------
+Fatal error: Uncaught Error: Call to undefined function someUndefinedFunction()
+-------------------code----------------------
+
+Difference from Parse Errors:
+Parse Error: PHP doesn’t understand the code → script doesn’t run at all.
+Fatal Error: PHP understands the code but can’t execute it → script runs until the error.
+
+3. Debugging Tips
+Check error messages carefully.
+If PHP points to a line, the actual mistake might be before that line.
+
+Enable error reporting during development:
+-------------------code----------------------
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+-------------------code----------------------
