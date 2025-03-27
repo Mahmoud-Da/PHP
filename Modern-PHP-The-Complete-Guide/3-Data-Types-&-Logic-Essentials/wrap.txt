@@ -339,3 +339,71 @@ string(9) "Hello PHP"
 Provides both value and data type.
 Helps debug complex issues efficiently.
 Shows how PHP handles type conversions.
+
+
+
+*** 26. Booleans & Comparison Operators: Compare Values ***
+
+- Introduction
+Booleans are a fundamental data type in PHP, representing only two possible values: `true` or `false`. They are crucial in programming as they allow us to execute code based on conditions.
+
+- Boolean Values
+A boolean is simply a value that is either `true` or `false`. Instead of defining strings or numbers, we can define booleans directly:
+-------------------code----------------------
+$trueValue = true;
+$falseValue = false;
+var_dump($trueValue); // Outputs: bool(true)
+var_dump($falseValue); // Outputs: bool(false)
+-------------------code----------------------
+Booleans can also be stored in variables and used in logical expressions.
+
+- Boolean Comparisons
+Booleans often result from comparisons in PHP. Various comparison operators generate boolean values:
+
+-Greater Than and Less Than Operators
+-------------------code----------------------
+$number = 42;
+var_dump($number > 13); // Outputs: bool(true)
+var_dump($number < 13); // Outputs: bool(false)
+-------------------code----------------------
+Here, `42 > 13` evaluates to `true`, while `42 < 13` evaluates to `false`.
+
+- Greater Than or Equal To & Less Than or Equal To
+-------------------code----------------------
+var_dump(13 <= 13); // Outputs: bool(true)
+var_dump(42 >= 13); // Outputs: bool(true)
+-------------------code----------------------
+These operators check if a value is either greater than or equal to (or less than or equal to) another value.
+
+- Equality and Identity Comparisons
+PHP provides different equality operators to compare values and types:
+
+- Loose Equality (`==`)
+-------------------code----------------------
+var_dump("30" == 30); // Outputs: bool(true)
+-------------------code----------------------
+This checks if values are equal but does **not** check their types.
+
+- Strict Equality (`===`)
+-------------------code----------------------
+var_dump("30" === 30); // Outputs: bool(false)
+-------------------code----------------------
+Strict equality checks both value **and** type. Since one side is a string and the other is an integer, the comparison returns `false`.
+
+- Inequality Operators
+- Loose Inequality (`!=` or `<>`): Checks if values are not equal, ignoring type.
+- Strict Inequality (`!==`): Checks if values or types are different.
+
+-------------------code----------------------
+var_dump("30" != 30); // Outputs: bool(false)
+var_dump("30" !== 30); // Outputs: bool(true)
+-------------------code----------------------
+
+- Best Practices for Boolean Comparisons
+- Prefer `===` and `!==` for more reliable comparisons.
+- Avoid using `==` unless you explicitly want to allow type conversion.
+- Using strict comparisons helps prevent subtle bugs that can be difficult to debug later.
+
+- Conclusion
+Booleans are an essential part of PHP, enabling conditional logic. Understanding comparison operators and using strict comparisons when necessary can lead to more stable and predictable code.
+
