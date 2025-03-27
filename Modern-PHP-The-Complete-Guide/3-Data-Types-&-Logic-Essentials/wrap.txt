@@ -81,3 +81,91 @@ $subject = 'PHP';
 echo "I'm $name and I'm learning $subject.";
 -------------------code----------------------
 This method only works with double-quoted strings. With single quotes, variables are treated as plain text.
+
+*** 21. Strings within Double Quotes: Utilize Variable Substitution & Special Characters ***
+
+1. Introduction
+Strings in PHP can be defined using either single quotes (`'`) or double quotes (`"`). While both approaches yield the same result in many cases, there are key differences in functionality.
+
+2. Defining Strings with Double Quotes
+Using double quotes provides additional flexibility. For example:
+-------------------code----------------------
+$string = "I'm learning PHP";
+echo $string;
+-------------------code----------------------
+This works without requiring escape characters because single quotes are allowed inside double-quoted strings.
+
+3. Differences Between Single and Double Quotes
+3.1 Escaping Characters
+- **Double Quotes**: To include a double quote inside a double-quoted string, you must escape it using `\`:
+-------------------code----------------------
+$string = "I am learning \"PHP\"";
+-------------------code----------------------
+- **Single Quotes**: To include a single quote inside a single-quoted string, escape it using `\`:
+-------------------code----------------------
+$string = 'I'm learning PHP';
+-------------------code----------------------
+
+3.2 Variable Interpolation
+- Double Quotes: Variables inside double-quoted strings are parsed and replaced with their values:
+-------------------code----------------------
+$greeting = "Hello";
+echo "$greeting, world!"; // Output: Hello, world!
+-------------------code----------------------
+
+- Single Quotes: Variables are treated as plain text and not expanded:
+-------------------code----------------------
+echo '$greeting, world!'; // Output: $greeting, world!
+-------------------code----------------------
+
+3.3 Using Curly Braces for Variable Parsing
+To avoid ambiguity when using variables inside double quotes, curly braces `{}` can be used:
+-------------------code----------------------
+$name = "Yannis";
+echo "My name is {$name}!"; // Output: My name is Yannis!
+-------------------code----------------------
+
+4. Special Characters in Double-Quoted Strings
+Certain escape sequences are supported in double-quoted strings:
+- `\n` (New line)
+- `\t` (Tab)
+- `\"` (Double quote)
+- `\$` (Dollar sign)
+
+Example:
+-------------------code----------------------
+echo "Hello\nWorld";
+// Output:
+// Hello
+// World
+-------------------code----------------------
+Single-quoted strings do not interpret these special characters:
+-------------------code----------------------
+echo 'Hello\nWorld';
+// Output: Hello\nWorld
+-------------------code----------------------
+
+5. Handling Line Breaks in HTML
+When outputting text to an HTML page:
+- `\n` creates a line break in the source code but is ignored by the browser.
+- `<br>` should be used to create visible line breaks:
+-------------------code----------------------
+echo "First Line<br>Second Line";
+-------------------code----------------------
+
+6. Best Practices: When to Use Single vs. Double Quotes
+Prefer Single Quotes When:
+- No variable interpolation is needed.
+- The string contains `$` symbols that are not variables.
+- Performance is a concern (single quotes are slightly faster because they avoid variable parsing).
+
+Use Double Quotes When:
+- Variables need to be included directly inside the string.
+- Special characters like `\n`, `\t` need to be used.
+- Readability is improved by avoiding concatenation (`.` operator).
+
+7. Conclusion
+Both single and double quotes can define strings, 
+but double quotes provide more flexibility with variable interpolation and escape sequences. Choosing the right approach depends on the specific
+requirements of the code.
+
