@@ -765,3 +765,69 @@ Example:
 - Conclusion:
 Alternative syntax improves the readability and structure of PHP code when working with HTML, especially in simple conditional logic scenarios.
 It is particularly helpful when generating HTML output based on conditions but does not replace the need for regular PHP blocks when implementing more complex logic.
+
+*** 31. Boolean Operators: Craft More Complex Conditions with `!`, `&&`, `||`, `XOR` ***
+
+1. Flipping a Boolean
+You can use the exclamation sign (!) to flip a boolean value:
+
+Example:
+-------------------code----------------------
+!true // false
+!false // true
+-------------------code----------------------
+
+2. Using Boolean in Conditional Statements
+In actual use, booleans are typically found in if statements, like:
+-------------------code----------------------
+if (!($number == 5)) {
+    // Do something
+}
+-------------------code----------------------
+
+Here, !($number == 5) flips the result of the comparison.
+
+3. Logical AND (&&)
+The logical AND (&&) operator requires both sides of the expression to be true to return true.
+
+Example:
+-------------------code----------------------
+true && true  // true
+false && true // false
+false && false // false
+-------------------code----------------------
+
+In a real scenario, you'd combine conditions like this:
+
+-------------------code----------------------
+if ($viewCount > 10000 && $viewCount <= 100000) {
+    echo "Medium performing video";
+}
+-------------------code----------------------
+
+4. Logical OR (||)
+The logical OR (||) operator returns true if either side of the expression is true.
+
+Example:
+-------------------code----------------------
+true || false  // true
+true || true   // true
+false || false // false
+-------------------code----------------------
+
+5. Logical XOR (xor)
+The logical XOR (xor) returns true if only one of the sides is true. 
+If both sides are true or both are false, it returns false.
+Example:
+-------------------code----------------------
+true xor false  // true
+true xor true   // false
+false xor false // false
+-------------------code----------------------
+
+Summary of Logical Operators:
+AND (&&): Both sides must be true for the result to be true.
+OR (||): One side must be true for the result to be true.
+XOR (xor): Only one side can be true for the result to be true.
+NOT (!): Flips a boolean value.
+
