@@ -1,0 +1,26 @@
+*** 19. Overview ***
+
+- Introduction
+In this chapter, we will dive deeper into programming with PHP by exploring its essential
+components. Understanding these fundamentals will allow us to build more dynamic and functional applications.
+
+- Data Types in PHP
+We will first explore different data types and how they can be used effectively in PHP.
+These include:
+Numbers – Performing mathematical operations.
+Strings – Working with and manipulating text.
+Booleans – Understanding true/false values and their applications.
+
+- Basic Functions in PHP
+
+PHP provides several built-in functions that are essential for debugging and working efficiently with data. Some of the functions we will explore include:
+var_dump() – Allows us to debug our code by displaying variable information.
+empty() – Checks if a variable is empty.
+
+- Conditional Statements in PHP
+Conditional statements enable us to execute specific parts of code only when certain conditions are met. This is useful for controlling the flow of a program. We will apply these concepts to enhance our restaurant project.
+
+- Practical Application in the Restaurant Project
+At the end of this chapter, you will be able to improve our restaurant project by implementing:
+Dynamic menu highlighting – When navigating to a page (e.g., "Our Mission" or "Ingredients"), the corresponding menu option will be highlighted.
+Default images for pages – Ensuring that pages without custom images will display a default image instead.
