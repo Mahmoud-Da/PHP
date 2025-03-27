@@ -465,3 +465,64 @@ Transform the restaurant website into a multi-page site using PHP for better mai
 - Implement PHP variables to customize titles and background images dynamically.
 - Continue improving code efficiency and adding new features as needed.
 
+*** 16. Project: Multi-Page Restaurant Website (Displaying Data & Exercise) ***
+- Enhancements and Issues
+Issue: Shared Background Image & Page Title
+The same background image appears on all pages.
+The browser title remains unchanged across pages.
+
+Solution: Using PHP Variables
+Assign unique titles and background images per page dynamically.
+Implement variables in header.inc.php to adapt content per page.
+
+- Implementation Steps
+
+Step 1: Updating Page Titles
+- Define a $pageTitle variable at the beginning of each page:
+-------------------code----------------------
+<?php $pageTitle = "Our Mission"; ?>
+-------------------code----------------------
+
+- Modify header.inc.php to display the dynamic title:
+-------------------code----------------------
+<title><?php echo $pageTitle; ?> - Culinary Cove</title>
+-------------------code----------------------
+Ensure each page defines $pageTitle before including header.inc.php.
+
+Step 2: Dynamic Background Images
+- Define a $headerImage variable in each page:
+-------------------code----------------------
+<?php $headerImage = "images/mission-header.jpg"; ?>
+-------------------code----------------------
+
+- Modify header.inc.php to set the background image dynamically:
+-------------------code----------------------
+<style>
+    .header {
+        background-image: url('<?php echo $headerImage; ?>');
+    }
+</style>
+-------------------code----------------------
+Ensure every page sets $pageTitle and $headerImage before including header.inc.php.
+This prevents errors where variables are undefined.
+
+
+Adding a New Page
+
+Objective
+Create a new page menu.php based on menu.html.
+Integrate it into the website using the PHP structure.
+
+Steps
+Rename menu.html to menu.php.
+Define $pageTitle and $headerImage at the top:
+-------------------code----------------------
+<?php
+$pageTitle = "Our Menu";
+$headerImage = "images/menu-header.jpg";
+?>
+-------------------code----------------------
+
+Include header.inc.php and footer.inc.php.
+Ensure content is properly displayed between includes.
+Update navigation to link to menu.php.
