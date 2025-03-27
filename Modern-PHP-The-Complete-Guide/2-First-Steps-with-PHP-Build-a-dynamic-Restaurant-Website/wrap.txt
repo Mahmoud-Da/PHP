@@ -383,3 +383,35 @@ echo $year;
 - Summary
 PHP variables are an essential tool for storing and reusing data efficiently.
 They are especially useful for dynamic HTML generation, making it easy to modify content across a website by changing values in one location.
+
+*** 14. Project: Multi-Page Restaurant Website (Introduction) ***
+
+Project: Culinary Cove Restaurant Website
+
+Overview
+The goal of this project is to develop a multi-page restaurant website for "Culinary Cove." Initially, we have a single-page website, but we aim to extend it using PHP to improve maintainability and scalability.
+Current Website Structure
+
+- Navigation Bar: Includes links to pages.
+
+Mission Statement Section: Displays an image and text about the restaurant's mission.
+Footer: Contains additional information or links.
+
+- Challenges in Plain HTML
+
+Currently, if we want to add a new page, such as an "Ingredients" page, we need to:
+Copy the existing HTML file (e.g., mission.html) and rename it (ingredients.html).
+Modify content such as images and text.
+Update navigation links in every HTML file manually.
+If there were 20 or even 2000 pages, managing them would become extremely difficult.
+
+- Solution: Using PHP for Maintainability
+To solve this issue, we will:
+Use PHP to separate reusable components (e.g., header, footer, and navigation).
+Dynamically include these components in each page.
+Ensure any updates to navigation or layout require changes in only one place, making maintenance more efficient.
+
+Next Steps:
+- Break down the website structure into common elements (header, footer, navigation).
+- Use PHP include or require to import these components dynamically.
+- Enhance the site with additional PHP functionalities, such as dynamic content loading.
