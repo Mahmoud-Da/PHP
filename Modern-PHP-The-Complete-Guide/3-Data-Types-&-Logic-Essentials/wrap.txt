@@ -24,3 +24,60 @@ Conditional statements enable us to execute specific parts of code only when cer
 At the end of this chapter, you will be able to improve our restaurant project by implementing:
 Dynamic menu highlighting – When navigating to a page (e.g., "Our Mission" or "Ingredients"), the corresponding menu option will be highlighted.
 Default images for pages – Ensuring that pages without custom images will display a default image instead.
+
+
+*** 20. Strings within Single Quotes & Combine Strings with the Dot (`.`) Operator ***
+- Introduction to Strings
+In this lecture, we will start exploring how strings work in PHP. To demonstrate this, we will use a simple website with a basic HTML structure 
+and a lightweight CSS framework called Simple CSS.
+
+The <pre> Tag and Its Importance
+The <pre> (Preformatted) tag is useful for displaying text exactly as it appears in the code, including whitespace and line breaks. Without it, a browser would collapse multiple spaces into a single space. Using the <pre> tag ensures that:
+Line breaks in the code are also displayed as line breaks in the browser.
+White spaces are preserved without needing to view the page source.
+Writing PHP Inside the <pre> Tag
+Within the <pre> tag, we can start a PHP block to execute PHP code. PHP ignores additional whitespace unless we explicitly print something using echo or another output command.
+
+- Defining and Outputting Strings
+
+Strings in PHP are collections of characters enclosed within single or double quotes. Examples:
+
+// Using single quotes
+-------------------code----------------------
+echo 'I am a string';
+-------------------code----------------------
+
+However, if a single quote is used within a string, it must be escaped using a backslash (\):
+-------------------code----------------------
+echo 'I\'m a string';
+-------------------code----------------------
+
+Escaping prevents PHP from misinterpreting the single quote as the end of the string.
+
+- Storing Strings in Variables
+Instead of directly outputting strings, we can store them in variables and use them later:
+-------------------code----------------------
+$greeting = 'Hello, World!';
+echo $greeting;
+-------------------code----------------------
+
+String Concatenation
+
+In PHP, strings can be combined using the concatenation operator (.):
+-------------------code----------------------
+$greeting = 'Hello';
+$name = 'Janice';
+echo $greeting . ', ' . $name . '!';
+-------------------code----------------------
+
+This outputs:
+Hello, Janice!
+
+- Using Variables Inside Strings
+We can also insert variables into strings dynamically:
+-------------------code----------------------
+$name = 'Janice';
+$subject = 'PHP';
+echo "I'm $name and I'm learning $subject.";
+-------------------code----------------------
+This method only works with double-quoted strings. With single quotes, variables are treated as plain text.
