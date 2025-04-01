@@ -684,3 +684,142 @@ This syntax works in the same way as the standard `foreach`, but it is preferred
 ### **Conclusion**
 
 The `continue` and `break` keywords provide powerful control over loops, allowing you to skip unwanted entries or completely terminate loops under specific conditions. These tools are essential for writing efficient and readable PHP code when dealing with complex logic and loops.
+
+*** 43. Additional Array Functions ***
+### Lecture Notes: Working with Arrays in PHP
+
+---
+
+### **1. Searching an Array: `array_search`**
+
+The `array_search` function allows you to search for a specific value in an array and returns the key of the element if it is found.
+
+#### **Example:**
+
+-------------------code----------------------
+$categories = ['business', 'programming', 'self-improvement'];
+$search = array_search('business', $categories);
+vardump($search);
+-------------------code----------------------
+
+- **Output**: The key (position) of the "business" element is returned, in this case `1`.
+- This can be useful if you want to know the index of an element within an array.
+
+### **2. Slicing an Array: `array_slice`**
+
+`array_slice` allows you to extract a portion of an array. You can specify the starting position and the number of elements you want to retrieve.
+
+#### **Example:**
+
+-------------------code----------------------
+$categories = ['business', 'programming', 'self-improvement'];
+$sliced = array_slice($categories, 1, 2);
+vardump($sliced);
+-------------------code----------------------
+
+- **Output**: Starting from index `1`, retrieve `2` elements, so it outputs `['programming', 'self-improvement']`.
+
+### **3. Working with Numeric Arrays:**
+
+There are several useful functions for numeric arrays, such as `min()`, `max()`, and `array_sum()`.
+
+#### **Getting the Minimum and Maximum:**
+
+-------------------code----------------------
+$numbers = [1, 5, 8, 10];
+$min = min($numbers);  // 1
+$max = max($numbers);  // 10
+vardump($min, $max);
+-------------------code----------------------
+
+- **Output**: `1` for the minimum and `10` for the maximum value in the array.
+
+#### **Summing Array Elements:**
+
+-------------------code----------------------
+$sum = array_sum($numbers);
+vardump($sum);
+-------------------code----------------------
+
+- **Output**: The sum of all elements in the array, in this case, `24`.
+
+#### **Calculating the Average:**
+
+To calculate the average, divide the sum of the array by the number of elements.
+
+-------------------code----------------------
+$average = $sum / count($numbers);
+vardump($average);
+-------------------code----------------------
+
+- **Output**: The average of the numbers is `6`.
+
+---
+
+### **4. Merging Arrays: `array_merge`**
+
+If you need to merge two arrays into one, use the `array_merge` function. It combines both arrays and resets the keys of the merged array.
+
+#### **Example:**
+
+-------------------code----------------------
+$topics1 = ['courses', 'books'];
+$topics2 = ['TV', 'travel'];
+$merged = array_merge($topics1, $topics2);
+vardump($merged);
+-------------------code----------------------
+
+- **Output**: `['courses', 'books', 'TV', 'travel']` — the two arrays are combined, and the keys are reset starting from `0`.
+
+### **5. Merging Arrays with Keys:**
+
+If you want to merge arrays while keeping the keys intact, you can use the `...` (spread) operator to unpack arrays into individual elements.
+
+#### **Example:**
+
+-------------------code----------------------
+$topics1 = ['courses', 'books'];
+$topics2 = ['TV', 'travel'];
+$merged = [...$topics1, ...$topics2];
+vardump($merged);
+-------------------code----------------------
+
+- **Output**: This achieves the same result as `array_merge` but provides flexibility if you want to insert additional elements or merge dynamically.
+
+---
+
+### **6. Unpacking Arrays with the Spread Operator**
+
+You can use the spread operator (`...`) to unpack arrays into individual elements for functions.
+
+#### **Example:**
+
+-------------------code----------------------
+$numbers = [10, 1];
+$rounded = round(...$numbers);
+vardump($rounded);
+-------------------code----------------------
+
+- **Output**: `10.0` — here the `round` function receives `10` as the first argument and `1` as the second.
+
+This feature allows for cleaner code when passing an array as multiple arguments to a function.
+
+### **7. Customizing the Merging Process**
+
+If you need more control over how arrays are merged (such as keeping or modifying the keys), you can use custom solutions. PHP’s built-in array functions, like `array_merge`, are flexible and allow you to manage array structures efficiently.
+
+---
+
+### **8. Summary of Key Functions:**
+- **`array_search`**: Searches an array for a value and returns the key.
+- **`array_slice`**: Extracts a portion of an array.
+- **`min()` and `max()`**: Return the minimum and maximum values in an array.
+- **`array_sum()`**: Returns the sum of all values in an array.
+- **`array_merge()`**: Merges two or more arrays together.
+- **Spread operator (`...`)**: Unpacks arrays into individual function parameters.
+
+---
+
+### **Conclusion:**
+
+You’ve learned several essential array functions such as searching, slicing, finding min/max values, summing elements, merging arrays, and unpacking arrays for functions. These utilities help you efficiently work with arrays, providing flexibility and reducing the need for complex custom code.
