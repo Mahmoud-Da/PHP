@@ -358,3 +358,104 @@ echo "The winner is: {$subscribers[$randomIndex]}";
 - Following best practices like using trailing commas and structured formatting improves code maintainability.
 
 Next, we will explore more advanced array functionalities!
+
+*** 40. Array Functions: Find Duplicate Elements and Sort Arrays ***
+# PHP Array Manipulation
+
+### Overwriting Array Elements
+- You can change an array element by directly assigning a new value to a specific index.
+- Example:
+-------------------code----------------------
+$categories[2] = "Art and Drawing";
+-------------------code----------------------
+
+- Useful when updating stored data dynamically.
+- Be cautious when overwriting elements as it modifies the original array.
+
+### Deleting an Element from an Array
+- Use the `unset()` function to remove an element from an array.
+- Example:
+-------------------code----------------------
+unset($categories[3]);
+-------------------code----------------------
+
+- `unset()` removes the element but does not shift the keys, which may create gaps in the index sequence.
+- Example issue:
+  - If `unset($categories[3]);` is executed, `categories[4]` remains unchanged.
+  - Accessing `categories[3]` afterward results in an undefined key error.
+- Best practice: Avoid using `unset()` if continuous indexing is required.
+
+### Adding Elements to an Array
+- To append an element automatically:
+-------------------code----------------------
+$categories[] = "Nature Books";
+-------------------code----------------------
+
+- PHP will assign the next available numerical index.
+- To add an element with a specific key:
+-------------------code----------------------
+  $categories[99] = "Nature Books";
+-------------------code----------------------
+
+- Be careful with manually assigned keys as they may break sequential indexing.
+
+### Random Selection from an Array (Giveaway Example)
+- Store names in an array:
+-------------------code----------------------
+  $names = ["Alice", "Bob", "Charlie", "David", "Emma", "Frank"];
+-------------------code----------------------
+
+- Get the total number of elements:
+-------------------code----------------------
+$count = count($names);
+-------------------code----------------------
+
+- Select a random index:
+-------------------code----------------------
+$randomIndex = rand(0, $count - 1);
+-------------------code----------------------
+
+- Retrieve the randomly chosen winner:
+-------------------code----------------------
+$winner = $names[$randomIndex];
+echo "The winner is: $winner";
+-------------------code----------------------
+
+- Alternative one-liner solution:
+-------------------code----------------------
+echo "The winner is: " . $names[rand(0, count($names) - 1)];
+-------------------code----------------------
+
+
+### Removing Duplicates in an Array
+- Use `array_unique()` to remove duplicate values.
+- Example:
+-------------------code----------------------
+$names = array_unique($names);
+-------------------code----------------------
+
+- Note: `array_unique()` creates a new array, so store the result back if needed.
+
+### Sorting an Array
+- Use `sort()` to arrange elements alphabetically or numerically.
+- Example:
+-------------------code----------------------
+sort($names);
+-------------------code----------------------
+
+- Unlike `array_unique()`, `sort()` modifies the original array in place.
+
+### Additional Array Functions
+- PHP provides many built-in functions for array manipulation.
+- Explore PHP documentation for more functions: [PHP.net](https://www.php.net/manual/en/ref.array.php).
+- Examples include:
+  - `array_reverse()` – Reverses the order of array elements.
+  - `array_merge()` – Combines two or more arrays.
+  - `array_filter()` – Filters elements based on a condition.
+
+### Summary
+- Overwriting, unsetting, and appending elements allow dynamic array modification.
+- Random selection is useful for scenarios like giveaways.
+- `array_unique()` and `sort()` help clean and organize arrays.
+- PHP provides a vast number of array functions for various use cases.
+
