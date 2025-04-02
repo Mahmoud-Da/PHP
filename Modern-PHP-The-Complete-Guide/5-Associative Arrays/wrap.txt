@@ -126,3 +126,114 @@ echo $books["Harry" . " " . "Potter"]; // Outputs: J.K. Rowling
 - PHP optimizes associative arrays for fast lookups, making them the best choice for mapping data.  
 
 ---
+
+*** 46. Manipulate and Output Keys and Values form Associative Arrays ***
+
+---
+
+# Advanced Concepts of Associative Arrays in PHP  
+
+## 1. Adding and Overwriting Entries  
+- Adding a new entry:  
+-------------------code----------------------
+$books["Romeo and Juliet"] = "William Shakespeare";
+-------------------code----------------------
+  - This adds `"Romeo and Juliet"` with the author `"William Shakespeare"`.  
+
+- Overwriting an existing entry:  
+-------------------code----------------------
+$books["Romeo and Juliet"] = "William_Shakespeare";  // Incorrect
+$books["Romeo and Juliet"] = "William Shakespeare";  // Corrected
+-------------------code----------------------
+  - The second assignment overwrites the incorrect entry.  
+  - Keys in associative arrays are unique—they can only exist once.  
+
+---
+
+## 2. Removing an Entry  
+- We can remove an entry using `unset()`:  
+-------------------code----------------------
+unset($books["Harry Potter"]);
+-------------------code----------------------
+  - This removes `"Harry Potter"` from the array.  
+  - If we print the array, `"Harry Potter"` will no longer exist.  
+
+---
+
+## 3. Counting Elements in an Associative Array  
+- We can get the number of entries using `count()`:  
+-------------------code----------------------
+echo count($books);  // Outputs: Number of books in the array
+-------------------code----------------------
+  - This works the same as it does for regular arrays.  
+
+---
+
+## 4. Iterating Over an Associative Array with `foreach`  
+
+### 4.1 Looping Through Only the Values
+- Using a simple `foreach` loop:  
+-------------------code----------------------
+foreach ($books as $author) {
+    echo $author . "<br>";
+}
+-------------------code----------------------
+  - This only retrieves values (authors).  
+
+### 4.2 Looping Through Both Keys and Values
+- To access both keys (books) and values (authors):  
+-------------------code----------------------
+foreach ($books as $book => $author) {
+    echo "$book was written by $author <br>";
+}
+-------------------code----------------------
+  - `$book` stores the key (book title).  
+  - `$author` stores the value (author).  
+
+- Best practices for variable naming:
+  - Use descriptive names like `$book` and `$author`.  
+  - If unsure, use `$key` and `$value` instead.  
+
+---
+
+## 5. Extracting Keys and Values  
+
+### 5.1 Extracting All Keys  
+- `array_keys()` returns an array of all keys:  
+-------------------code----------------------
+$bookTitles = array_keys($books);
+print_r($bookTitles);
+-------------------code----------------------
+  - This creates a new indexed array with only book titles.  
+
+### 5.2 Extracting All Values  
+- `array_values()` returns an array of all values:  
+-------------------code----------------------
+$authorsList = array_values($books);
+print_r($authorsList);
+-------------------code----------------------
+  - This creates a new indexed array with only author names.  
+
+### 5.3 Using `array_keys()` in a Loop  
+- If we only want to loop through keys:  
+-------------------code----------------------
+foreach (array_keys($books) as $book) {
+    echo $book . "<br>";
+}
+-------------------code----------------------
+  - This iterates only through book titles.  
+
+---
+
+## 6. Key-Value Processing in PHP  
+- Associative arrays do not modify the original array when using `array_keys()` or `array_values()`.  
+- These functions create new arrays while keeping the original array unchanged.  
+
+---
+
+## 7. Upcoming Topics  
+- How numeric keys behave in associative arrays.  
+- What happens when indexed and associative arrays are mixed.  
+- Exploring corner cases and special behaviors.  
+
+---
